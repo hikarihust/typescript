@@ -1,0 +1,5 @@
+                                                ECMAScript
+                                                
+Introduce 
+    http://es6-features.org/#Constants
+    https://kangax.github.io/compat-table/es6/
