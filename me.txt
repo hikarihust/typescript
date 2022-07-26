@@ -3,3 +3,9 @@
 Introduce 
     http://es6-features.org/#Constants
     https://kangax.github.io/compat-table/es6/
+Variable - Template String - Spread - Destructing
+    let mang ý nghĩa khai báo 1 biến nào đó sử dụng tạm thời trong 1 block scope nào đó
+    Let vs var
+        If using let In Block as FOR, IF, WHILE
+            -> Can not access value outer of block 
+    
