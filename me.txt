@@ -15,4 +15,5 @@ Variable - Template String - Spread - Destructing
     Destructuring
 Function
     Default params
+    Rest params
     
