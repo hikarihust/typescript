@@ -24,4 +24,13 @@ Enhanced
 OOP
     Class
     Inheritance
+
+============================================================================================
+
+                                    Ngôn ngữ TypeScript
+                                
+Typescript
+Chương trình TypeScript đầu tiên
+    Project structure
+        https://www.typescriptlang.org/
     
