@@ -20,4 +20,5 @@ Arrow Function
     Arrow Functions
     This
         .bind(this)
+Enhanced
     
