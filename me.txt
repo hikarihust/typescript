@@ -18,4 +18,6 @@ Function
     Rest params
 Arrow Function
     Arrow Functions
+    This
+        .bind(this)
     
