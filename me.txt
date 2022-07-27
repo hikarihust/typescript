@@ -16,4 +16,6 @@ Variable - Template String - Spread - Destructing
 Function
     Default params
     Rest params
+Arrow Function
+    Arrow Functions
     
