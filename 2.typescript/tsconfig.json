@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "rootDirs": ["ts", "css"],
+        "target"    : "ES6",
+        "outDir"    : "mjs",
+        "removeComments" : false,
+        "watch"     : true
+    },
+    "exclude": [
+        "css",
+        "fonts",
+        "js",
+        "mjs"
+    ]
+}

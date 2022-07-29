@@ -1,5 +1,5 @@
 function greeter(person) {
     return "Hello, " + person;
 }
-var user = "Es6";
+let user = "ABC";
 document.body.textContent = greeter(user);
