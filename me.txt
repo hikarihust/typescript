@@ -40,4 +40,6 @@ Chương trình TypeScript đầu tiên
     tsconfig
         Compile: tsc 
         exclude: Chứa các folder không cần biên dịch
+Variable & Data Type
+    Basic type
     
