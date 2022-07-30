@@ -1,3 +1,4 @@
+/*
 let mVariable: any = 4;
 
 mVariable = "ABC";
@@ -7,3 +8,4 @@ let mArray: any[] = [1, true, "abc"];
 
 console.log(mVariable);
 console.log(mArray);
+*/
