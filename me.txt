@@ -44,4 +44,5 @@ Variable & Data Type
     Basic type
     Array
     Tuple
+    Enum
     
