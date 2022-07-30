@@ -42,4 +42,5 @@ Chương trình TypeScript đầu tiên
         exclude: Chứa các folder không cần biên dịch
 Variable & Data Type
     Basic type
+    Array
     
