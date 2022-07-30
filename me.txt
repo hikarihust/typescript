@@ -49,4 +49,5 @@ Variable & Data Type
     Void
     Type assertions
     Interface object
+    Interface array
     
