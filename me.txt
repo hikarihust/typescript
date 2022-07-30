@@ -46,4 +46,5 @@ Variable & Data Type
     Tuple
     Enum
     Any
+    Void
     
