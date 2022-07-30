@@ -48,4 +48,5 @@ Variable & Data Type
     Any
     Void
     Type assertions
+    Interface object
     
