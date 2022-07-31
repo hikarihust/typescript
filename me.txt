@@ -54,4 +54,5 @@ Functions
     Return
     Param
     Rest params
+    Function types
     
