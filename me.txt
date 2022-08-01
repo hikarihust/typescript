@@ -55,4 +55,5 @@ Functions
     Param
     Rest params
     Function types
+    Arrow Functions
     
