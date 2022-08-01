@@ -57,4 +57,6 @@ Functions
     Function types
     Arrow Functions
     Overload
+OOP
+    Class
     
