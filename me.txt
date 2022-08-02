@@ -59,4 +59,5 @@ Functions
     Overload
 OOP
     Class
+    Static
     

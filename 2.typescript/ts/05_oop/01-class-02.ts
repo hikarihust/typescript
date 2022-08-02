@@ -1,3 +1,4 @@
+/*
 enum TaskState {
 	Created = 100,
 	Active,
@@ -35,3 +36,4 @@ let tasks: TaskInterface[] = [
 
 let taskServiceObj	= new TaskService(tasks);
 console.log(taskServiceObj.getItems());
+*/

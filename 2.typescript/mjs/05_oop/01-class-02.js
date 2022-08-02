@@ -1,25 +1,39 @@
-var TaskState;
-(function (TaskState) {
-    TaskState[TaskState["Created"] = 100] = "Created";
-    TaskState[TaskState["Active"] = 101] = "Active";
-    TaskState[TaskState["InActive"] = 102] = "InActive";
-    TaskState[TaskState["Proccess"] = 103] = "Proccess";
-    TaskState[TaskState["Finish"] = 104] = "Finish";
-})(TaskState || (TaskState = {}));
+/*
+enum TaskState {
+    Created = 100,
+    Active,
+    InActive,
+    Proccess,
+    Finish
+}
+
+interface TaskInterface {
+    id: number;
+    name: string;
+    state?: TaskState;
+}
+
 class TaskService {
-    constructor(tasks) {
+    tasks: TaskInterface[];
+
+    constructor(tasks: TaskInterface[]){
         this.tasks = tasks;
     }
+
     getItems() {
         return this.tasks;
     }
 }
-let task1 = { id: 1, name: "Coding" };
-let task2 = { id: 2, name: "Study ES6" };
-let tasks = [
+
+let task1: TaskInterface = {id: 1, name: "Coding"};
+let task2: TaskInterface = {id: 2, name: "Study ES6"};
+
+let tasks: TaskInterface[] = [
     task1,
     task2,
-    { id: 3, name: "Kiss my girl", state: TaskState.Finish }
+    {id: 3, name: "Kiss my girl", state: TaskState.Finish}
 ];
-let taskServiceObj = new TaskService(tasks);
+
+let taskServiceObj	= new TaskService(tasks);
 console.log(taskServiceObj.getItems());
+*/
