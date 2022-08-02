@@ -65,4 +65,6 @@ OOP
     Accessors
     Abstract
     Interface
+Generic
+    Basic
     
