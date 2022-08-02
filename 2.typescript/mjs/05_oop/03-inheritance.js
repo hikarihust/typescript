@@ -1,24 +1,37 @@
+/*
 class Course {
-    constructor(id, name, price) {
+    id: string;
+    name: string;
+    price: number;
+
+    constructor(id: string, name: string, price: number){
         this.id = id;
         this.name = name;
         this.price = price;
     }
-    showCourseInfo() {
+
+    showCourseInfo(): void{
         console.log(`${this.id} - ${this.name} - ${this.price}`);
     }
 }
+
 class CourseMobile extends Course {
-    constructor(id, name, price, author) {
+    author: string;
+
+    constructor(id: string, name: string, price: number, author: string){
         super(id, name, price);
         this.author = author;
     }
-    showCourseInfo() {
+
+    showCourseInfo(){
         super.showCourseInfo();
         console.log(this.author);
     }
 }
-var courseObj = new Course('CO12', "Programming", 23);
+
+var courseObj	= new Course('CO12', "Programming", 23);
 courseObj.showCourseInfo();
-var courseMobileObj = new CourseMobile('CO13', "Android", 60, "John");
+
+var courseMobileObj	= new CourseMobile('CO13', "Android", 60, "John");
 courseMobileObj.showCourseInfo();
+*/ 

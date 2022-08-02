@@ -1,3 +1,4 @@
+/*
 class Course {
 	id: string;
 	name: string;
@@ -33,3 +34,4 @@ courseObj.showCourseInfo();
 
 var courseMobileObj	= new CourseMobile('CO13', "Android", 60, "John");
 courseMobileObj.showCourseInfo();
+*/
