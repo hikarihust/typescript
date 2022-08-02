@@ -62,4 +62,5 @@ OOP
     Static
     Inheritance
     Access modifiers
+    Accessors
     

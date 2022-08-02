@@ -1,3 +1,4 @@
+/*
 class Course {
 	public id: string;
 	private name: string;
@@ -32,7 +33,7 @@ let courseMobileObj	= new CourseMobile('CO13', "Android", 60, "John");
 
 console.log(courseObj.id);
 courseMobileObj.checkPro();
-
+*/
 
 /*					Inside	Outside		Child Class
 	public			+		+			+
