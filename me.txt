@@ -60,4 +60,5 @@ Functions
 OOP
     Class
     Static
+    Inheritance
     
