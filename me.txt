@@ -71,4 +71,5 @@ Generic
     Class
 Module & Namepace
     Basic
+    Namepace
     
