@@ -72,4 +72,16 @@ Generic
 Module & Namepace
     Basic
     Namepace
+    Module
+        system js
+        https://github.com/systemjs/systemjs
+        -> system.js
+		<script>
+			System.defaultJSExtensions = true;
+			System.import('./mjs/07_module/Test');
+		</script>
+        Thư viện systemjs là 1 Module Loader giúp kéo vào các Module được biên dịch bởi typescript
     
+
+    Uncaught TypeError: System.config is not a function
+    https://github.com/systemjs/systemjs/issues/2269

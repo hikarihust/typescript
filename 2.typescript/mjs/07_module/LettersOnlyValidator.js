@@ -1,11 +1,10 @@
-/// <reference path="Validation.ts" />
-var Validation;
-(function (Validation) {
-    const lettersRegexp = /^[A-Za-z]+$/;
-    class LettersOnlyValidator {
-        isAcceptable(s) {
-            return lettersRegexp.test(s);
-        }
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LettersOnlyValidator = void 0;
+const lettersRegexp = /^[A-Za-z]+$/;
+class LettersOnlyValidator {
+    isAcceptable(s) {
+        return lettersRegexp.test(s);
     }
-    Validation.LettersOnlyValidator = LettersOnlyValidator;
-})(Validation || (Validation = {}));
+}
+exports.LettersOnlyValidator = LettersOnlyValidator;

@@ -1,11 +1,10 @@
-/// <reference path="Validation.ts" />
-var Validation;
-(function (Validation) {
-    const numberRegexp = /^[0-9]+$/;
-    class ZipCodeValidator {
-        isAcceptable(s) {
-            return s.length === 5 && numberRegexp.test(s);
-        }
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ZipCodeValidator = void 0;
+const numberRegexp = /^[0-9]+$/;
+class ZipCodeValidator {
+    isAcceptable(s) {
+        return s.length === 5 && numberRegexp.test(s);
     }
-    Validation.ZipCodeValidator = ZipCodeValidator;
-})(Validation || (Validation = {}));
+}
+exports.ZipCodeValidator = ZipCodeValidator;
