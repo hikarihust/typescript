@@ -1,4 +1,4 @@
-define(["require", "exports", "./product"], function (require, exports, product_1) {
+define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ProductRepository = void 0;
@@ -12,7 +12,7 @@ define(["require", "exports", "./product"], function (require, exports, product_
             return [];
         }
         getItemByID(id) {
-            return new product_1.Product(100, "bulbasaur", "bulbasaur.png", "Lorem", 69);
+            return null;
         }
         showItemsInHTML() {
             return "";
