@@ -83,4 +83,11 @@ Module & Namepace
         Thư viện systemjs là 1 Module Loader giúp kéo vào các Module được biên dịch bởi typescript
         amd -> Module Loader require.js
     Import Export
+
+============================================================================================
+
+                                    Xây dựng ứng dụng Shopping Cart
+    
+Xây dựng cấu trúc thư mục và tạo giao diện với Bootstrap
+    Project structure
     
