@@ -217,19 +217,6 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/system.js"></script>
-    <script>
-      System.config({
-        baseURL: "/",
-        packages: {
-          "": {
-            defaultExtension: "js",
-          },
-        },
-      });
-
-      System.defaultJSExtensions = true;
-      System.import("./mjs/07_module/Test");
-    </script>
+    <script type="module" src="./mjs/07_module/Test.js"></script>
   </body>
 </html>
