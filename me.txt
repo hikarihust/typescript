@@ -91,4 +91,6 @@ Module & Namepace
 Xây dựng cấu trúc thư mục và tạo giao diện với Bootstrap
     Project structure
     Bootstrap
+Xây dựng Class và Interface cần thiết
+    Product
     
