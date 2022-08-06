@@ -100,4 +100,6 @@ Xây dựng chức năng hiển thị sản phẩm
     GetItems
     GetItemByID
     ShowItemsInHTML
+    JQuery
+        npm i --save-dev @types/jquery
     
