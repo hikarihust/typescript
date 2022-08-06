@@ -104,4 +104,6 @@ Xây dựng chức năng hiển thị sản phẩm
         npm i --save-dev @types/jquery
     ShowBuyItem
     Helpers
+Xây dựng chức năng Add sản phẩm vào giỏ hàng
+    Empty Cart
     
