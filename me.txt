@@ -102,4 +102,5 @@ Xây dựng chức năng hiển thị sản phẩm
     ShowItemsInHTML
     JQuery
         npm i --save-dev @types/jquery
+    ShowBuyItem
     

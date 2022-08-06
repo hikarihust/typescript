@@ -54,8 +54,7 @@ export class ProductRepository {
                                 <div class="media-body">
                                     <h4 class="media-heading">${ currentItem.name }</h4>
                                     <p>${ currentItem.summary }</p>
-                                    <input name="quantity-product-${ currentItem.id }" type="number" value="1" min="1">
-    						        <a data-product="${ currentItem.id }" href="#" class="price"> ${ currentItem.price } </a>
+                                    ${ this.showBuyItemInHTML(currentItem)}
                                 </div>
                             </div>`;
 			}
@@ -65,4 +64,16 @@ export class ProductRepository {
 		
 		return xhtmlResult;
     }
+
+	private showBuyItemInHTML(product: Product) : string {
+		let xhtmlResult: string = "";
+
+		if (product.canBuy == true){
+			xhtmlResult = `<input name="quantity-product-${ product.id }" type="number" value="1" min="1">
+    						<a data-product="${ product.id }" href="#" class="price">$ ${ product.price } </a>`;
+		}else{
+			xhtmlResult = `<span class="price">$ ${ product.price }</span>`;
+		}
+		return xhtmlResult;
+	}
 }
