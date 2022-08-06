@@ -33,7 +33,30 @@ define(["require", "exports", "./product"], function (require, exports, product_
             return null;
         }
         showItemsInHTML() {
-            return "";
+            let total = this.products.length;
+            let xhtmlResult = "";
+            if (total > 0) {
+                for (let i = 0; i < total; i++) {
+                    let currentItem = this.products[i];
+                    xhtmlResult += `<div class="media product">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" src="img/characters/${currentItem.image}" alt="${currentItem.name}">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">${currentItem.name}</h4>
+                                    <p>${currentItem.summary}</p>
+                                    <input name="quantity-product-${currentItem.id}" type="number" value="1" min="1">
+    						        <a data-product="${currentItem.id}" href="#" class="price"> ${currentItem.price} </a>
+                                </div>
+                            </div>`;
+                }
+            }
+            else {
+                xhtmlResult = "Empty product in my shop";
+            }
+            return xhtmlResult;
         }
     }
     exports.ProductRepository = ProductRepository;

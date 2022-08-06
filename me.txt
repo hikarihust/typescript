@@ -99,4 +99,5 @@ Xây dựng Class và Interface cần thiết
 Xây dựng chức năng hiển thị sản phẩm
     GetItems
     GetItemByID
+    ShowItemsInHTML
     
