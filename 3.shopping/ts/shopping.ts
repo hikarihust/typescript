@@ -33,5 +33,11 @@ function showCart() : void{
 jQuery(function() { 
 	showListProduct();
     showCart();
-    showNotification(MNotification.NOTI_READY_TO_BUY);
+	showNotification(MNotification.NOTI_READY_TO_BUY);
+	
+	// Buy Product
+	$("a.price").on("click", function(){
+        let id : number = $(this).data("product");
+		let quantity: number = +$("input[name='quantity-product-" + id + "']").val();
+	});
 })
