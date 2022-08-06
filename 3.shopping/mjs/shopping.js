@@ -3,4 +3,6 @@ define(["require", "exports", "./product-repository"], function (require, export
     Object.defineProperty(exports, "__esModule", { value: true });
     let productRepository = new product_repository_1.ProductRepository();
     let products = productRepository.getItems();
+    let productItem = productRepository.getItemByID(100);
+    console.log(productItem);
 });

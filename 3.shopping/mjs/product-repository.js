@@ -18,6 +18,18 @@ define(["require", "exports", "./product"], function (require, exports, product_
             return this.products;
         }
         getItemByID(id) {
+            // Cach 1
+            /*
+            let total : number = this.products.length;
+            for(let i : number = 0; i < total; i++) {
+                if(this.products[i].id == id) return this.products[i];
+            }
+            return null;
+            */
+            // Cach 2
+            let filter = this.products.filter(product => product.id == id);
+            if (filter.length > 0)
+                return filter[0];
             return null;
         }
         showItemsInHTML() {
