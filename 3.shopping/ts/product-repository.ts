@@ -1,4 +1,5 @@
 import { Product } from "./product";
+import { Helpers } from "./libs/helpers";
 
 export class ProductRepository {
     private products: Product[] = [];
@@ -70,9 +71,9 @@ export class ProductRepository {
 
 		if (product.canBuy == true){
 			xhtmlResult = `<input name="quantity-product-${ product.id }" type="number" value="1" min="1">
-    						<a data-product="${ product.id }" href="#" class="price">$ ${ product.price } </a>`;
+    						<a data-product="${ product.id }" href="#" class="price"> ${ Helpers.toCurrency(product.price, "USD", "right") } </a>`;
 		}else{
-			xhtmlResult = `<span class="price">$ ${ product.price }</span>`;
+			xhtmlResult = `<span class="price">${ Helpers.toCurrency(product.price, "$") }</span>`;
 		}
 		return xhtmlResult;
 	}

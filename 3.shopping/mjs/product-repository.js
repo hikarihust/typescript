@@ -1,4 +1,4 @@
-define(["require", "exports", "./product"], function (require, exports, product_1) {
+define(["require", "exports", "./product", "./libs/helpers"], function (require, exports, product_1, helpers_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.ProductRepository = void 0;
@@ -61,10 +61,10 @@ define(["require", "exports", "./product"], function (require, exports, product_
             let xhtmlResult = "";
             if (product.canBuy == true) {
                 xhtmlResult = `<input name="quantity-product-${product.id}" type="number" value="1" min="1">
-    						<a data-product="${product.id}" href="#" class="price">$ ${product.price} </a>`;
+    						<a data-product="${product.id}" href="#" class="price"> ${helpers_1.Helpers.toCurrency(product.price, "USD", "right")} </a>`;
             }
             else {
-                xhtmlResult = `<span class="price">$ ${product.price}</span>`;
+                xhtmlResult = `<span class="price">${helpers_1.Helpers.toCurrency(product.price, "$")}</span>`;
             }
             return xhtmlResult;
         }
