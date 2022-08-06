@@ -1,4 +1,4 @@
-define(["require", "exports", "./product-repository"], function (require, exports, product_repository_1) {
+define(["require", "exports", "./product-repository", "./libs/validate"], function (require, exports, product_repository_1, validate_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     let productRepository = new product_repository_1.ProductRepository();
@@ -12,6 +12,7 @@ define(["require", "exports", "./product-repository"], function (require, export
     var MNotification;
     (function (MNotification) {
         MNotification.NOTI_READY_TO_BUY = "Ready to buy product";
+        MNotification.NOTI_GREATER_THAN_ONE = "Quantity must equal or greater than 1";
     })(MNotification || (MNotification = {}));
     // Hiển thị danh sách sản phẩm
     function showListProduct() {
@@ -34,6 +35,11 @@ define(["require", "exports", "./product-repository"], function (require, export
         $("a.price").on("click", function () {
             let id = $(this).data("product");
             let quantity = +$("input[name='quantity-product-" + id + "']").val();
+            if (validate_1.Validate.checkQuantity(quantity)) {
+            }
+            else {
+                showNotification(MNotification.NOTI_GREATER_THAN_ONE);
+            }
         });
     });
 });

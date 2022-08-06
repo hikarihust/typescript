@@ -107,4 +107,5 @@ Xây dựng chức năng hiển thị sản phẩm
 Xây dựng chức năng Add sản phẩm vào giỏ hàng
     Empty Cart
     ID - Quantity
+    Validate Quantity
     
