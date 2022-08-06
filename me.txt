@@ -96,4 +96,6 @@ Xây dựng Class và Interface cần thiết
     ProductRepository
     CartItem
     Cart
+Xây dựng chức năng hiển thị sản phẩm
+    GetItems
     
