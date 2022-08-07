@@ -28,6 +28,12 @@ define(["require", "exports", "./cart-item", "./libs/helpers"], function (requir
             return -1;
         }
         updateProduct(product, quantity = 1) {
+            let position = this.getProductPosition(product);
+            if (position > -1) {
+                this.totalQuantity = this.totalQuantity - this.cartItems[position].quantity + quantity;
+                this.totalPrice = this.totalPrice - product.price * (this.cartItems[position].quantity - quantity);
+                this.cartItems[position].quantity = quantity;
+            }
         }
         removeProduct(product) {
         }

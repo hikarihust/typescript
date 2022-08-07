@@ -111,4 +111,6 @@ Xây dựng chức năng Add sản phẩm vào giỏ hàng
     AddProduct, GetCartItemPosition
     ShowCartBodyInHTML, ShowCartItemInHTML
     ShowCartFooterInHTML
+Xây dựng chức năng Update số lượng sản phẩm
+    Shop - updateProduct
     

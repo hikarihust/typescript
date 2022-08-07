@@ -27,7 +27,12 @@ export class Cart {
 	}
 
 	public updateProduct (product: Product, quantity: number = 1) :void {
-
+		let position : number = this.getProductPosition (product);
+		if(position > -1) {
+			this.totalQuantity = this.totalQuantity - this.cartItems[position].quantity + quantity;
+			this.totalPrice = this.totalPrice - product.price * (this.cartItems[position].quantity - quantity);
+			this.cartItems[position].quantity = quantity;
+		}
 	}
 
 	public removeProduct (product: Product) : void {

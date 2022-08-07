@@ -13,6 +13,7 @@ define(["require", "exports", "./product-repository", "./libs/validate", "./cart
         MNotification.NOTI_READY_TO_BUY = "Ready to buy product";
         MNotification.NOTI_GREATER_THAN_ONE = "Quantity must equal or greater than 1";
         MNotification.NOTI_ACT_ADD = "Added successfull !!";
+        MNotification.NOTI_ACT_UPDATE = "Updated successfull !!";
     })(MNotification || (MNotification = {}));
     let productRepository = new product_repository_1.ProductRepository();
     let cartObj = new cart_1.Cart();
@@ -41,6 +42,18 @@ define(["require", "exports", "./product-repository", "./libs/validate", "./cart
             showNotification(MNotification.NOTI_GREATER_THAN_ONE);
         }
     }
+    // Update Product
+    function updateProduct(id, quantity) {
+        if (validate_1.Validate.checkQuantity(quantity)) {
+            let product = productRepository.getItemByID(id);
+            cartObj.updateProduct(product, quantity);
+            showCart();
+            showNotification(MNotification.NOTI_ACT_UPDATE);
+        }
+        else {
+            showNotification(MNotification.NOTI_GREATER_THAN_ONE);
+        }
+    }
     jQuery(function () {
         showListProduct();
         showCart();
@@ -50,6 +63,13 @@ define(["require", "exports", "./product-repository", "./libs/validate", "./cart
             let id = $(this).data("product");
             let quantity = +$("input[name='quantity-product-" + id + "']").val();
             addProduct(id, quantity);
+            return false;
+        });
+        // Update Product
+        $(document).on("click", "a.update-cart-item", function () {
+            let id = $(this).data("product");
+            let quantity = +$("input[name='cart-item-quantity-" + id + "']").val();
+            updateProduct(id, quantity);
             return false;
         });
     });

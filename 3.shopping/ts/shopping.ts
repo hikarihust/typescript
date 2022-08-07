@@ -13,7 +13,8 @@ namespace MElement {
 namespace MNotification {
 	export const NOTI_READY_TO_BUY: string = "Ready to buy product";
 	export const NOTI_GREATER_THAN_ONE: string = "Quantity must equal or greater than 1";
-	export const NOTI_ACT_ADD : string = "Added successfull !!";
+	export const NOTI_ACT_ADD: string = "Added successfull !!";
+	export const NOTI_ACT_UPDATE : string = "Updated successfull !!";
 }
 
 let productRepository = new ProductRepository();
@@ -47,6 +48,18 @@ function addProduct(id : number, quantity : number) {
     }
 }
 
+// Update Product
+function updateProduct(id : number, quantity : number) {
+	if(Validate.checkQuantity(quantity)){
+		let product : Product = productRepository.getItemByID(id);
+		cartObj.updateProduct(product, quantity);
+		showCart();
+		showNotification(MNotification.NOTI_ACT_UPDATE);
+	} else {
+		showNotification(MNotification.NOTI_GREATER_THAN_ONE);
+	}
+}
+
 jQuery(function() { 
 	showListProduct();
     showCart();
@@ -58,6 +71,14 @@ jQuery(function() {
 		let quantity: number = +$("input[name='quantity-product-" + id + "']").val();
 
 		addProduct(id, quantity);
+		return false;
+	});
+
+    // Update Product
+	$(document).on("click", "a.update-cart-item", function(){
+		let id : number = $(this).data("product");
+		let quantity : number = +$("input[name='cart-item-quantity-" + id + "']").val();
+		updateProduct(id, quantity);
 		return false;
 	});
 })
