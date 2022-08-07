@@ -108,4 +108,5 @@ Xây dựng chức năng Add sản phẩm vào giỏ hàng
     Empty Cart
     ID - Quantity
     Validate Quantity
+    AddProduct, GetCartItemPosition
     

@@ -1,7 +1,7 @@
 import { ProductRepository } from './product-repository';
+import { Product } from './product';
 import { Validate } from './libs/validate';
-
-let productRepository = new ProductRepository();
+import { Cart } from './cart';
 
 namespace MElement {
 	export const ELM_LIST_PRODUCT: string = "#list-product";
@@ -14,6 +14,9 @@ namespace MNotification {
 	export const NOTI_READY_TO_BUY: string = "Ready to buy product";
 	export const NOTI_GREATER_THAN_ONE : string = "Quantity must equal or greater than 1";
 }
+
+let productRepository = new ProductRepository();
+let cartObj	= new Cart();
 
 // Hiển thị danh sách sản phẩm
 function showListProduct() : void{
@@ -31,6 +34,16 @@ function showCart() : void{
 	$(MElement.ELM_CART_FOOTER).html("");
 }
 
+// Add Product
+function addProduct(id : number, quantity : number) {
+    if(Validate.checkQuantity(quantity)){
+		let product : Product = productRepository.getItemByID(id);
+		cartObj.addProduct(product, quantity);
+    } else {
+        showNotification(MNotification.NOTI_GREATER_THAN_ONE);
+    }
+}
+
 jQuery(function() { 
 	showListProduct();
     showCart();
@@ -41,10 +54,7 @@ jQuery(function() {
         let id : number = $(this).data("product");
 		let quantity: number = +$("input[name='quantity-product-" + id + "']").val();
 
-        if(Validate.checkQuantity(quantity)){
-        
-        } else {
-            showNotification(MNotification.NOTI_GREATER_THAN_ONE);
-        }
+		addProduct(id, quantity);
+		return false;
 	});
 })

@@ -7,7 +7,20 @@ export class Cart {
     private totalPrice: number = 0;
     
 	public addProduct (product: Product, quantity: number = 1) : void {
+		let position : number = this.getProductPosition (product);
+		if(position > -1) {
+			this.cartItems[position].quantity += quantity;
+		}else {
+			this.cartItems[this.cartItems.length] = new CartItem(product, quantity);
+		}
+	}
 
+	private getProductPosition (product : Product) : number {
+		let total : number = this.cartItems.length;
+		for(let i : number = 0; i < total; i++){
+			if(this.cartItems[i].product.id == product.id) return i;
+		}
+		return -1;
 	}
 
 	public updateProduct (product: Product, quantity: number = 1) :void {
