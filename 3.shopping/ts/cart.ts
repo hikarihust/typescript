@@ -36,7 +36,13 @@ export class Cart {
 	}
 
 	public removeProduct (product: Product) : void {
-
+		let position : number = this.getProductPosition (product);
+		if(position > -1) {
+			this.totalQuantity = this.totalQuantity - this.cartItems[position].quantity;
+			this.totalPrice = this.totalPrice - product.price * this.cartItems[position].quantity;
+			
+			this.cartItems.splice(position, 1);
+		}
 	}
 
 	public isEmpty () : boolean {

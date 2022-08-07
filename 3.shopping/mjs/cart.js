@@ -36,6 +36,12 @@ define(["require", "exports", "./cart-item", "./libs/helpers"], function (requir
             }
         }
         removeProduct(product) {
+            let position = this.getProductPosition(product);
+            if (position > -1) {
+                this.totalQuantity = this.totalQuantity - this.cartItems[position].quantity;
+                this.totalPrice = this.totalPrice - product.price * this.cartItems[position].quantity;
+                this.cartItems.splice(position, 1);
+            }
         }
         isEmpty() {
             return (this.cartItems.length == 0);

@@ -14,7 +14,8 @@ namespace MNotification {
 	export const NOTI_READY_TO_BUY: string = "Ready to buy product";
 	export const NOTI_GREATER_THAN_ONE: string = "Quantity must equal or greater than 1";
 	export const NOTI_ACT_ADD: string = "Added successfull !!";
-	export const NOTI_ACT_UPDATE : string = "Updated successfull !!";
+	export const NOTI_ACT_UPDATE: string = "Updated successfull !!";
+	export const NOTI_ACT_DELETE : string = "Deleted successfull !!";
 }
 
 let productRepository = new ProductRepository();
@@ -60,6 +61,14 @@ function updateProduct(id : number, quantity : number) {
 	}
 }
 
+// Delete Product
+function deleteProduct(id : number) {
+	let product : Product = productRepository.getItemByID(id);
+	cartObj.removeProduct(product);
+	showCart();
+	showNotification(MNotification.NOTI_ACT_DELETE);
+}
+
 jQuery(function() { 
 	showListProduct();
     showCart();
@@ -79,6 +88,13 @@ jQuery(function() {
 		let id : number = $(this).data("product");
 		let quantity : number = +$("input[name='cart-item-quantity-" + id + "']").val();
 		updateProduct(id, quantity);
+		return false;
+	});
+
+	// Delete Product
+	$(document).on("click", "a.delete-cart-item", function(){
+		let id : number = $(this).data("product");
+		deleteProduct(id);
 		return false;
 	});
 })
