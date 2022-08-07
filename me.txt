@@ -109,4 +109,5 @@ Xây dựng chức năng Add sản phẩm vào giỏ hàng
     ID - Quantity
     Validate Quantity
     AddProduct, GetCartItemPosition
+    ShowCartBodyInHTML, ShowCartItemInHTML
     

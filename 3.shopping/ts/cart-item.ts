@@ -1,4 +1,5 @@
 import { Product } from './product';
+import { Helpers } from './libs/helpers';
 
 export class CartItem {
 	private _product: Product;
@@ -10,11 +11,21 @@ export class CartItem {
 	}
 
 	public showCartItemInHTML(index : number) : string {
-        return "";
+		return `<tr>
+					<th scope="row">${ index }</th>
+					<td>${ this.product.name }</td>
+					<td>${ Helpers.toCurrency(this.product.price, "USD", "right") }</td>
+					<td><input name="cart-item-quantity-${ this.product.id }" type="number" value="${ this.quantity }" min="1"></td>
+					<td><strong>${ Helpers.toCurrency(this.getSubtotal(), "USD", "right") }</strong></td>
+					<td>
+						<a class="label label-info update-cart-item" href="#" data-product="${ this.product.id }">Update</a>
+						<a class="label label-danger delete-cart-item" href="#" data-product="${ this.product.id }">Delete</a>
+					</td>
+				</tr>`;
 	}
 
 	public getSubtotal() : number {
-		return 1;
+		return this.product.price * this.quantity;
 	}
 
 	public get quantity() : number {

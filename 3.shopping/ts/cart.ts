@@ -44,7 +44,15 @@ export class Cart {
 	}
 	
 	public showCartBodyInHTML () : string {
-		return "";
+		let xhtmlResult : string = ``;
+		if(!this.isEmpty()) {
+			let total : number = this.cartItems.length;
+			for(let i : number = 0; i < total; i++){
+				let cartItemCurrent : CartItem = this.cartItems[i];
+				xhtmlResult += cartItemCurrent.showCartItemInHTML(i + 1);
+			}	
+		}
+		return xhtmlResult;
 	}
 
 	public showCartFooterInHTML () : string {
