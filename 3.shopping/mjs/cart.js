@@ -1,4 +1,4 @@
-define(["require", "exports", "./cart-item"], function (require, exports, cart_item_1) {
+define(["require", "exports", "./cart-item", "./libs/helpers"], function (require, exports, cart_item_1, helpers_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Cart = void 0;
@@ -16,6 +16,8 @@ define(["require", "exports", "./cart-item"], function (require, exports, cart_i
             else {
                 this.cartItems[this.cartItems.length] = new cart_item_1.CartItem(product, quantity);
             }
+            this.totalQuantity += quantity;
+            this.totalPrice += product.price * quantity;
         }
         getProductPosition(product) {
             let total = this.cartItems.length;
@@ -32,12 +34,15 @@ define(["require", "exports", "./cart-item"], function (require, exports, cart_i
         isEmpty() {
             return (this.cartItems.length == 0);
         }
-        getTotalQuantity() {
+        /*
+        public getTotalQuantity () : number {
             return 1;
         }
-        getTotalPrice() {
+    
+        public getTotalPrice () : number {
             return 1;
         }
+        */
         showCartBodyInHTML() {
             let xhtmlResult = ``;
             if (!this.isEmpty()) {
@@ -50,7 +55,14 @@ define(["require", "exports", "./cart-item"], function (require, exports, cart_i
             return xhtmlResult;
         }
         showCartFooterInHTML() {
-            return "";
+            let xhtmlResult = `<tr><th colspan="6">Empty product in your cart</th></tr>`;
+            if (!this.isEmpty()) {
+                xhtmlResult = `<tr>
+								<td colspan="4">There are <b>${this.totalQuantity}</b> items in your shopping cart.</td>
+								<td colspan="2" class="total-price text-left">${helpers_1.Helpers.toCurrency(this.totalPrice, "USD", "right")}</td>
+							</tr>`;
+            }
+            return xhtmlResult;
         }
     }
     exports.Cart = Cart;

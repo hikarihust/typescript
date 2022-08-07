@@ -32,7 +32,7 @@ function showNotification(str: string) : void{
 // Hiển thị giỏ hàng:
 function showCart() : void{
     $(MElement.ELM_CART_BODY).html(cartObj.showCartBodyInHTML());
-	$(MElement.ELM_CART_FOOTER).html("");
+	$(MElement.ELM_CART_FOOTER).html(cartObj.showCartFooterInHTML ());
 }
 
 // Add Product
